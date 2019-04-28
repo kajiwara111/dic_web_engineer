@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <title>HTML-CSS演習課題1</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header clearfix">
+                <a href="#">
+                    <img src="./images/logo.png" class="logo_image" alt="ロゴ">
+                </a>
+                <nav>
+                    <ul class="top_menu clearfix">
+                        <li><a href="#">ホーム</a></li>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </nav>                
+            </header>
+            <img src="./images/contact.png" alt="#" class="contact_image">
+            <div class="wrapper clearfix"> 
+                <aside class="side_menu">
+                    <ul>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#" id="selected">お問い合わせ</a></li>
+                    </ul>
+                </aside>
+                <form action="" class="contact_form">
+                    <table>
+                        <tr>
+                            <th>
+                                <label for="name">お名前</label>
+                            </th>
+                            <td>
+                                <input id="name" type="text" name="yourname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="email">メールアドレス</label>
+                            </th>
+                            <td>
+                                <input id="email" type="mail" name="youremail">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>性別</label>
+                            </th>
+                            <td>
+                                <!--radioはnameを同じにするとその中で一つしか選択できなくなる -->
+                                <input id="male" type="radio" name="sex"><label for="male">男性</label>
+                                <input id="female" type="radio" name="sex"><label for="female">女性</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="contact">お問い合わせ内容</label>
+                            </th>
+                            <td>
+                                <textarea id="contact" name="contact"></textarea>
+                            </td>
+                        </tr>
+    
+                    </table>
+                    <div class="submit">
+                        <input type="submit" name="submit_botton" value="送信">
+                    </div>
+                </form>
+            </div>
+            <footer class="footer">
+                <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+            </footer>
+        </div>        
+    </body>
+</html>

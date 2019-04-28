@@ -1,0 +1,35 @@
+
+【課題１】
+これは画像などを除いて、HTML=DOMの読み込みが終わったら
+function()の中の処理(=なにかしらの処理)を実行するという意味です。
+
+jQuery(JavaScript)はHTMLが完全に読み込まれないまま何か処理を実行すると大抵正しく動作しません。
+なのでこのreadyを使うことになります。
+
+※書き方はいくつかある。すべて同じ動作。
+※https://qiita.com/8845musign/items/88a8c693c84ba63cea1d
+
+$(document).ready(function(){
+  //何かしらの処理
+});
+
+$(function(){
+  //なにかしらの処理
+});
+
+jQuery(document).ready(function() {
+//なにかしらの処理
+});
+
+jQuery(function(){
+  //なにかしらの処理
+});
+
+【課題２】
+$(‘#btn-evaluation’).click(function() { ~ });の記述の意味
+
+（解答）
+id="btn-evaluationの要素に対してクリックイベントが発生したおきにfunctionの中身の動作を実行する。
+clickがイベント。function部分をイベントハンドラーと呼ぶ。
+
+
