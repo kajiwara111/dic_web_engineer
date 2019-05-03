@@ -1,24 +1,42 @@
-#----------------------------------------------------------
+#-----------------------------------------------------------------------------
 # タイトル: Rubyシリーズ課題（じゃんけんゲームを作成する）
 # 作成者:梶原康範
 # 作成日: 2019/05/02初回作成
-# 更新履歴:
-#-----------------------------------------------------------
+# 更新履歴: 2019/05/03入力判定メソッド(judge_inputをprivateメソッドとして追加)
+#------------------------------------------------------------------------------
 
 #----------------------------
 #自分の手を取得するクラス
 #----------------------------
 class Player
+  
+  #入力が適正か判定するメソッド
+  def judge_input(hand)
+    #入力文字列の長さが1かつ0-2を削除して長さが0になれば入力OK
+    if (hand.length == 1) && (hand.delete("[0-2]").length == 0)
+      isContinue = false
+    else
+      isContinue = true
+    end
+    return isContinue
+  end
+  
+  private :judge_input #judge_inputはクラス内部でしか使用しないためprivateメソッドに公開レベル変更
+  
   # コンソールを入力待ち状態にし、プレイヤーがコンソールから打ち込んだ値を出力する処理のメソッド
   def get_hand
-    hand = gets.to_i
     
-    #入力が不正な場合再度入力
-    while (hand != 0) && (hand != 1) && (hand != 2) do
-      puts "入力は0 or 1 or 2のどれかで行ってください"
-      hand = gets.to_i
+    #再入力判定フラグ
+    isContinue = true 
+
+    while isContinue do
+      hand = gets.chomp #gets.to_iは無効な入力には0がかえってくるので注意。chompないと改行コードも入ってくるので注意
+      isContinue = judge_input(hand)
+      if isContinue == true
+        puts "入力は0 or 1 or 2のどれかで行ってください"
+      end
     end 
-    return hand
+    return hand.to_i
   end
 end
 
